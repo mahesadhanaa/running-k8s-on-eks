@@ -112,6 +112,10 @@ Requirements for EKS deployments :
 
    And, lastly, we should be able to confirm our access
 
+   $ kubectl get nodes
+
+   $ kubectl get pods
+
 6. Selecting worker sizing
 
 7. Create a worker scale policy
