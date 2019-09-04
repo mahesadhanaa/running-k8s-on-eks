@@ -124,6 +124,7 @@ Requirements for EKS deployments :
 
    - and then we can create aws auth configmap yaml:
 
+       [
         apiVersion: v1
         kind: ConfigMap
         metadata:
@@ -136,5 +137,5 @@ Requirements for EKS deployments :
             groups:
                 - system:bootstrappers
                 - system:nodes
-
+       ]
 7. Create a worker scale policy
