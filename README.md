@@ -50,19 +50,19 @@ Requirements for EKS deployments :
    clusterAdmin
    - eks admin policy
    - k8s admin "system:master" group
-     the following policies:
-     AdminEKSPolicy
-     AdminCloudFormationPolicy
-     AmazonEKSServicePolicy
-     AmazonEKSClusterPolicy
+     - the following policies:
+       - AdminEKSPolicy
+       - AdminCloudFormationPolicy
+       - AmazonEKSServicePolicy
+       - AmazonEKSClusterPolicy
 
    User 2:
 
    clusterUser
    - no IAM policies
    - k8s admin "system:master" group
-     the following policies:
-     AdminEKSPolicy
+     - the following policies:
+       - AdminEKSPolicy
 
    for both users, create programatic credentials, and for the admin user, create a password credential as well.
 
