@@ -145,4 +145,8 @@ Requirements for EKS deployments :
 
       $ kubectl apply -f configmapfilename.yaml
 
-7. Create a worker scale policy
+      # check nodes worker
+
+      $ kubectl get nodes
+
+    the worker is ready !!!
