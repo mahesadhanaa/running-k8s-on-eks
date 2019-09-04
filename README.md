@@ -69,7 +69,7 @@ Requirements for EKS deployments :
 3. Build the EKS VPC
 
    - Create VPC, Subnet, Internet Gateway, Security Group
-   - Or you can use cloudformation template from S3 template : https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-01-09/amazon-eks-nodegroup.yaml
+   - Or you can use cloudformation template from S3 template : https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-01-09/amazon-eks-vpc-sample.yaml
 
 4. Install kubectl for EKS auth
    
@@ -117,5 +117,24 @@ Requirements for EKS deployments :
    $ kubectl get pods
 
 6. Selecting worker sizing
+
+   - you use cloudformation for create workers. and then S3 template for create eks worker : https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-01-09/amazon-eks-nodegroup.yaml
+
+   - After complete, we can go ahead and grab our instance role
+
+   - and then we can create aws auth configmap yaml:
+
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+        name: aws-auth
+        namespace: kube-system
+        data:
+        mapRoles: |
+            - rolearn: arn:aws:iam::095328455918:role/eksNodeStack-NodeInstanceRole-17A7EQ14XHWGI
+            username: system:node:{{EC2PrivateDNSName}}
+            groups:
+                - system:bootstrappers
+                - system:nodes
 
 7. Create a worker scale policy
