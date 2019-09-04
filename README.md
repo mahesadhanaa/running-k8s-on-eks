@@ -1,7 +1,45 @@
 # running-k8s-on-eks
 how to running kubernetes on EKS AWS
 
+Requirements for EKS deployments :
+
+
 1. Create IAM roles and policies
+
+    In order to access the EKS cluster services (CRUD opreations, and even just being able to connect to the cluster), an IAM policy is needed. The following, while "open" only allows eks service access, and is appropriate for most users who need to manipulate the EKS service
+
+    - Create a policy with the following json object, and name it xxxxx
+
+      iam_eks_policy.json
+
+            {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Action": [
+                            "eks:*"
+                        ],
+                        "Resource": "*"
+                    }
+                ]
+            }
+
+    - and also need CloudFormation access policy which we can call xxxx
+
+      iam_cf_policy.json
+
+            {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Action": "*",
+                        "Resource": "*"
+                    }
+                ]
+            }
+    - Create Role for EKS (role ARN)           
 
 2. Create admin and kubernetes users
 
@@ -9,4 +47,8 @@ how to running kubernetes on EKS AWS
 
 4. Install kubectl for EKS auth
 
-5. 
+5. Launch an EKS cluster master
+
+6. Selecting worker sizing
+
+7. Create a worker scale policy
