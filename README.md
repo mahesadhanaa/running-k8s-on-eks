@@ -145,7 +145,7 @@ Requirements for EKS deployments :
 
       $ kubectl apply -f configmapfilename.yaml
 
-      # check nodes worker
+      check nodes worker
 
       $ kubectl get nodes
 
