@@ -90,6 +90,28 @@ Requirements for EKS deployments :
 
 5. Launch an EKS cluster master
 
+   Once we have created our IAM roles policies, and generated our VPC we've ready to launch our EKS control plane.
+
+   we can launch via the EKS console.
+
+   when have done. the first we need to log into the CLI using the key and secret we downloaded for the clusterAdmin :
+
+   $ aws configure --profile=clusterAdmin
+
+     AWS Access Key ID --> Access Key clusterAdmin
+
+     AWS Secret Access Key -->  Secret Access Key clusterAdmin
+
+     Default region name --> region name
+
+     Default output format 
+
+   then, we update kubeconfig for remote access EKS :
+
+   $ aws eks update-kubeconfig --name clustername
+
+   And, lastly, we should be able to confirm our access
+
 6. Selecting worker sizing
 
 7. Create a worker scale policy
