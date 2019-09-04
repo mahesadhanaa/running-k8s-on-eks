@@ -133,12 +133,12 @@ Requirements for EKS deployments :
         namespace: kube-system
         data:
         mapRoles: |
-            - rolearn: arn:aws:iam::095328455918:role/eksNodeStack-NodeInstanceRole-17A7EQ14XHWGI
+            - rolearn: 
             username: system:node:{{EC2PrivateDNSName}}
             groups:
                 - system:bootstrappers
                 - system:nodes
 
     ]
-       
+
 7. Create a worker scale policy
