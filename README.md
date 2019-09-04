@@ -68,6 +68,9 @@ Requirements for EKS deployments :
 
 3. Build the EKS VPC
 
+   - Create VPC, Subnet, Internet Gateway, Security Group
+   - Or you can use cloudformation template from S3 template : https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-01-09/amazon-eks-nodegroup.yaml
+
 4. Install kubectl for EKS auth
 
 5. Launch an EKS cluster master
