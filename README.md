@@ -124,18 +124,29 @@ Requirements for EKS deployments :
 
    - and then we can create aws auth configmap yaml:
 
-       [
+       
         apiVersion: v1
+        
         kind: ConfigMap
+        
         metadata:
+        
         name: aws-auth
+        
         namespace: kube-system
+        
         data:
+        
         mapRoles: |
-            - rolearn: arn:aws:iam::095328455918:role/eksNodeStack-NodeInstanceRole-17A7EQ14XHWGI
+        
+            - rolearn: arn:aws:iam::095328455918:role/
+            
+            eksNodeStack-NodeInstanceRole-17A7EQ14XHWGI
+            
             username: system:node:{{EC2PrivateDNSName}}
+            
             groups:
                 - system:bootstrappers
                 - system:nodes
-       ]
+       
 7. Create a worker scale policy
