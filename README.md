@@ -120,6 +120,8 @@ Requirements for EKS deployments :
 
    - you use cloudformation for create workers. and then S3 template for create eks worker : https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-01-09/amazon-eks-nodegroup.yaml
 
+   - use ami for nodes in accordance with the cluster EKS version
+
    - After complete, we can go ahead and grab our instance role
 
    - and then we can create aws auth configmap yaml:
@@ -150,3 +152,8 @@ Requirements for EKS deployments :
       $ kubectl get nodes
 
     the worker is ready !!!
+
+
+7. Storage Classes
+
+    
